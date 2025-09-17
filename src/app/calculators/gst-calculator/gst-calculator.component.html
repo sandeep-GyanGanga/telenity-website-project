@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>GST Calculator</h1>
+  <p>Enter amount and GST % to calculate total with GST</p>
+
+  <!-- Input Section -->
+  <div class="form-section">
+    <label for="amount">Amount (₹)</label>
+    <input type="number" id="amount" class="form-control"
+           [(ngModel)]="amount" placeholder="Enter amount" />
+
+    <label for="gst">GST %</label>
+    <input type="number" id="gst" class="form-control"
+           [(ngModel)]="gstPercentage" placeholder="Enter GST %" />
+
+    <button class="btn" (click)="calculateGST()">Calculate</button>
+  </div>
+
+  <!-- Result Section -->
+  <div class="results" *ngIf="totalAmount !== null">
+    <h3>Result</h3>
+    <p>GST Amount: <strong>₹{{ gstAmount | number : '1.2-2' }}</strong></p>
+    <p>Total Amount (with GST): <strong>₹{{ totalAmount | number : '1.2-2' }}</strong></p>
+  </div>
+</div>

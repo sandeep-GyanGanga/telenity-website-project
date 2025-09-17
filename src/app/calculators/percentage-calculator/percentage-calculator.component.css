@@ -1,0 +1,20 @@
+.calculator-container {
+  max-width: 500px;
+}
+
+@media (max-width: 576px) {
+  .calculator-container {
+    padding: 10px;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  .form-control, .form-select {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

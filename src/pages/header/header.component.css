@@ -47,22 +47,3 @@
     padding: 0.5rem 0;
   }
 }
-
-
-/* Dropdown hover effect */
-.hover-dropdown:hover .dropdown-menu {
-  display: block;
-  margin-top: 0; /* aligns with parent */
-}
-
-/* Smooth dropdown */
-.dropdown-menu {
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.hover-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-}

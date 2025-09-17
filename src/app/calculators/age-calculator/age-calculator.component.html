@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Age Calculator</h1>
+  <p>Enter your date of birth to calculate your exact age</p>
+
+  <!-- Input Section -->
+  <div class="form-section">
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" class="form-control" [(ngModel)]="birthDate" />
+
+    <button class="btn" (click)="calculateAge()">Calculate Age</button>
+  </div>
+
+  <!-- Result Section -->
+  <div class="results" *ngIf="ageResult">
+    <h3>Your Age</h3>
+    <p><strong>{{ ageResult.years }}</strong> Years, 
+       <strong>{{ ageResult.months }}</strong> Months, 
+       <strong>{{ ageResult.days }}</strong> Days</p>
+  </div>
+</div>

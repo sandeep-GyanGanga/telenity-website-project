@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg custom-navbar shadow-sm">
   <div class="container-fluid">
     <!-- Logo -->
-    <a class="navbar-brand fw-bold">
-      <span class="logo-text">Calculation<span class="logo-highlight">Adda</span></span>
+    <a class="navbar-brand fw-bold" >
+      <span class="logo-text">Tax<span class="logo-highlight">Adda</span></span>
     </a>
 
     <!-- Toggler for mobile -->
@@ -22,44 +22,37 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav align-items-lg-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page">Home</a>
+          <a class="nav-link active" aria-current="page" >Home</a>
         </li>
 
-        <!-- Dropdown (Hover Enabled) -->
-        <li class="nav-item dropdown hover-dropdown">
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
+            
             id="navbarDropdown"
             role="button"
+            data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             Calculator & Tools
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" routerLink="/percentage-calculator">Percentage Calculator</a></li>
-            <li><a class="dropdown-item" routerLink="/bmi-calculator">BMI Calculator</a></li>
-            <li><a class="dropdown-item" routerLink="/sip-calculator">SIP Calculator</a></li>
-            <li><a class="dropdown-item" routerLink="/age-calculator">Age Calculator</a></li>
-            <li><a class="dropdown-item" routerLink="/discount-calculator">Discount Calculator</a></li>
-            <li><a class="dropdown-item" routerLink="/gst-calculator">Gst Calculator</a></li>
-
-
-
-
+            <li><a class="dropdown-item" >Income Tax Calculator</a></li>
           </ul>
         </li>
 
-        <li class="nav-item"><a class="nav-link">Tax Calendar</a></li>
-        <li class="nav-item"><a class="nav-link">Blog</a></li>
-        <li class="nav-item"><a class="nav-link">About Us</a></li>
+        <li class="nav-item">
+          <a class="nav-link" >Tax Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >About Us</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<!-- Routed Pages -->
-<div class="main-content">
-  <router-outlet></router-outlet>
-</div>
-
-<app-footer></app-footer>

@@ -1,0 +1,57 @@
+<div class="container">
+  <!-- BMI Calculator Card -->
+  <div class="card">
+    <h2>BMI Calculator</h2>
+
+    <label for="unit">Select Unit</label>
+    <select id="unit" class="form-select mb-3" [(ngModel)]="unit">
+      <option value="metric">Metric (kg/cm)</option>
+      <option value="imperial">Imperial (lbs/ft+in)</option>
+    </select>
+
+    <!-- Metric -->
+    <div *ngIf="unit === 'metric'">
+      <label for="weight">Weight (kg)</label>
+      <input type="number" id="weight" class="form-control mb-2" [(ngModel)]="weight">
+
+      <label for="heightCm">Height (cm)</label>
+      <input type="number" id="heightCm" class="form-control mb-3" [(ngModel)]="heightCm">
+    </div>
+
+    <!-- Imperial -->
+    <div *ngIf="unit === 'imperial'">
+      <label for="weight">Weight (lbs)</label>
+      <input type="number" id="weight" class="form-control mb-2" [(ngModel)]="weight">
+
+      <label>Height</label>
+      <div class="d-flex gap-2">
+        <input type="number" class="form-control" placeholder="ft" [(ngModel)]="heightFt">
+        <input type="number" class="form-control" placeholder="in" [(ngModel)]="heightIn">
+      </div>
+    </div>
+
+    <button class="btn btn-primary w-100 mt-3" (click)="calculate()">Calculate</button>
+
+    <!-- Result -->
+    <div *ngIf="result" class="result-card mt-3"
+         [ngClass]="{
+           'underweight': category === 'Underweight',
+           'normal': category === 'Normal',
+           'overweight': category === 'Overweight',
+           'obese': category === 'Obese'
+         }">
+      BMI: {{ result }} ({{ category }})
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="card history" *ngIf="history.length > 0">
+    <h3>History</h3>
+    <ul>
+      <li *ngFor="let item of history">
+        {{ item.unit | titlecase }} | {{ item.weight }} | {{ item.height }} → 
+        <strong>{{ item.bmi }} ({{ item.category }})</strong>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.form-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  background: #1e40af;
+}
+
+.results, .history {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+.results p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+canvas {
+  margin-top: 20px;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.history li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.tooltip {
+  color: #2563eb;
+  cursor: help;
+  margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}

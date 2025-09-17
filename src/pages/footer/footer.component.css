@@ -1,0 +1,27 @@
+.custom-footer {
+  background-color: #0d1b2a; /* match your header color */
+}
+
+.footer-link {
+  color: #b0b8c5;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.app-badge {
+  height: 40px;
+}
+
+.social-link {
+  color: #b0b8c5;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #ffffff;
+}

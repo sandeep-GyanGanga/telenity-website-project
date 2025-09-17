@@ -1,0 +1,69 @@
+<div class="container">
+  <h1>SIP Calculator</h1>
+  <h2>Plan your wealth creation with Mutual Fund SIPs</h2>
+
+  <!-- Form -->
+  <div class="form-section">
+    <div>
+      <label>Investment Type <span class="tooltip" title="Choose between SIP or Lump Sum">ℹ️</span></label>
+      <select class="form-control" [(ngModel)]="investmentType">
+        <option value="sip">Monthly SIP</option>
+        <option value="quarterly">Quarterly SIP</option>
+        <option value="lumpsum">Lump Sum</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Monthly Investment (₹)</label>
+      <input type="number" class="form-control" [(ngModel)]="monthlyInvestment" placeholder="e.g., 5000" />
+    </div>
+
+    <div>
+      <label>Expected Return Rate (%) <span class="tooltip" title="CAGR or annual return rate">ℹ️</span></label>
+      <input type="number" class="form-control" [(ngModel)]="annualRate" placeholder="e.g., 12" />
+    </div>
+
+    <div>
+      <label>Time Period (Years)</label>
+      <input type="number" class="form-control" [(ngModel)]="years" placeholder="e.g., 10" />
+    </div>
+
+    <div>
+      <label>Step-up % per Year <span class="tooltip" title="Annual increase in SIP amount">ℹ️</span></label>
+      <input type="number" class="form-control" [(ngModel)]="stepUp" placeholder="Optional" />
+    </div>
+  </div>
+
+  <button class="btn" (click)="calculateSIP()">Calculate</button>
+
+  <!-- Results -->
+  <div class="results" *ngIf="calculated">
+    <h3>Results</h3>
+    <p><strong>Total Invested:</strong> ₹{{ totalInvested | number:'1.0-0' }}</p>
+    <p><strong>Estimated Returns:</strong> ₹{{ totalReturns | number:'1.0-0' }}</p>
+    <p><strong>Final Maturity Value:</strong> ₹{{ maturityValue | number:'1.0-0' }}</p>
+
+      <!-- Chart Container -->
+  <div style="max-width: 300px; margin: 0 auto;">
+    <canvas id="sipChart"></canvas>
+  </div>
+  </div>
+
+  <!-- History -->
+  <div class="history" *ngIf="history.length > 0">
+    <h3>History (Last 5-7)</h3>
+    <ul>
+      <li *ngFor="let item of history">{{ item }}</li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="results">
+    <h3>Explore More Calculators</h3>
+    <p>
+      Try our <a href="/percentage-calculator">Percentage Calculator</a>, 
+      <a href="/bmi-calculator">BMI Calculator</a>, 
+      <a href="/loan-emi-calculator">Loan EMI Calculator</a>.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="calculator-container container my-4">
+  <div class="card shadow-lg p-4 rounded-4">
+    <h2 class="text-center mb-3">Multi-Functional % Calculator</h2>
+
+    <!-- Select Mode -->
+    <div class="mb-3">
+      <select class="form-select" [(ngModel)]="mode">
+        <option value="basic">Basic: X% of Y</option>
+        <option value="reverse">Reverse: X is what % of Y</option>
+        <option value="increase">Percentage Increase (A → B)</option>
+        <option value="decrease">Percentage Decrease (A → B)</option>
+        <option value="change">Percentage Change (A ↔ B)</option>
+      </select>
+    </div>
+
+    <!-- Dynamic Inputs -->
+    <div *ngIf="mode === 'basic'">
+      <input type="number" [(ngModel)]="percentage" class="form-control mb-2" placeholder="Enter Percentage (%)">
+      <input type="number" [(ngModel)]="base" class="form-control mb-2" placeholder="Enter Base Value">
+    </div>
+
+    <div *ngIf="mode === 'reverse'">
+      <input type="number" [(ngModel)]="part" class="form-control mb-2" placeholder="Enter Part Value (X)">
+      <input type="number" [(ngModel)]="whole" class="form-control mb-2" placeholder="Enter Whole Value (Y)">
+    </div>
+
+    <div *ngIf="mode === 'increase' || mode === 'decrease' || mode === 'change'">
+      <input type="number" [(ngModel)]="value1" class="form-control mb-2" placeholder="Enter First Value (A)">
+      <input type="number" [(ngModel)]="value2" class="form-control mb-2" placeholder="Enter Second Value (B)">
+    </div>
+
+    <!-- Calculate Button -->
+    <button class="btn btn-primary w-100" (click)="calculate()">Calculate</button>
+
+    <!-- Result -->
+    <div class="result mt-3 text-center fw-bold" *ngIf="result">
+      {{ result }}
+    </div>
+
+    <!-- History -->
+    <div class="history mt-4" *ngIf="history.length > 0">
+      <h5>History</h5>
+      <div *ngFor="let item of history" class="history-item">{{ item }}</div>
+    </div>
+  </div>
+</div>
