@@ -1,0 +1,41 @@
+<div class="container py-4">
+  <h2>Budget / Expense Tracker</h2>
+  <form (ngSubmit)="addExpense()" class="row g-3">
+    <div class="col-md-4">
+      <label class="form-label">Expense Name</label>
+      <input type="text" class="form-control" [(ngModel)]="expenseName" name="expenseName" required />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Amount</label>
+      <input type="number" class="form-control" [(ngModel)]="expenseAmount" name="expenseAmount" required />
+    </div>
+    <div class="col-md-4 d-flex align-items-end">
+      <button class="btn btn-primary">Add Expense</button>
+    </div>
+  </form>
+
+  <table class="table table-bordered mt-3" *ngIf="expenses.length > 0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Amount</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of expenses; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ e.name }}</td>
+        <td>{{ e.amount | number:'1.2-2' }}</td>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="removeExpense(i)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="expenses.length > 0" class="alert alert-info mt-3">
+    Total: ₹ {{ total | number:'1.2-2' }}
+  </div>
+</div>

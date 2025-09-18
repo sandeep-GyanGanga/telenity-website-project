@@ -1,0 +1,28 @@
+<div class="container py-4">
+  <h2>Mortgage Calculator</h2>
+  <form (ngSubmit)="calculate()" class="row g-3">
+    <div class="col-md-3">
+      <label class="form-label">Home Price</label>
+      <input type="number" class="form-control" [(ngModel)]="homePrice" name="homePrice" required />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Down Payment</label>
+      <input type="number" class="form-control" [(ngModel)]="downPayment" name="downPayment" required />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Interest Rate (%)</label>
+      <input type="number" class="form-control" [(ngModel)]="interestRate" name="interestRate" required />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Term (Months)</label>
+      <input type="number" class="form-control" [(ngModel)]="termMonths" name="termMonths" required />
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary">Calculate</button>
+    </div>
+  </form>
+
+  <div *ngIf="emi !== null" class="alert alert-info mt-3">
+    Monthly Payment: ₹ {{ emi | number:'1.2-2' }}
+  </div>
+</div>

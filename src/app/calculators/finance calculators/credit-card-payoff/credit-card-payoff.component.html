@@ -1,0 +1,23 @@
+<div class="calculator-card">
+  <h3>Credit Card Payoff</h3>
+  <form (ngSubmit)="calculatePayoff()">
+    <div class="mb-2">
+      <label>Outstanding Balance (₹)</label>
+      <input type="number" [(ngModel)]="balance" name="balance" class="form-control" required />
+    </div>
+    <div class="mb-2">
+      <label>Monthly Payment (₹)</label>
+      <input type="number" [(ngModel)]="monthlyPayment" name="monthlyPayment" class="form-control" required />
+    </div>
+    <div class="mb-2">
+      <label>Interest Rate (% per month)</label>
+      <input type="number" [(ngModel)]="rate" name="rate" class="form-control" required />
+    </div>
+    <button class="btn btn-primary mt-2" type="submit">Calculate</button>
+  </form>
+
+  <div *ngIf="months">
+    <h4 class="mt-3">Months to Payoff: {{ months }}</h4>
+    <p>Total Interest Paid: ₹{{ totalInterest | number:'1.2-2' }}</p>
+  </div>
+</div>

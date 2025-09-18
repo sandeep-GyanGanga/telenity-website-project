@@ -1,0 +1,26 @@
+<div class="container py-4">
+  <h2>Investment Return / ROI Calculator</h2>
+  <form (ngSubmit)="calculate()" class="row g-3">
+    <div class="col-md-3">
+      <label class="form-label">Initial Investment</label>
+      <input type="number" class="form-control" [(ngModel)]="initial" name="initial" required />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Final Value</label>
+      <input type="number" class="form-control" [(ngModel)]="finalValue" name="finalValue" required />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Years</label>
+      <input type="number" class="form-control" [(ngModel)]="years" name="years" required />
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary">Calculate</button>
+    </div>
+  </form>
+
+  <div *ngIf="roi !== null" class="alert alert-info mt-3">
+    ROI: {{ roi | number:'1.2-2' }} %  
+    <br />
+    CAGR: {{ cagr | number:'1.2-2' }} % per year
+  </div>
+</div>

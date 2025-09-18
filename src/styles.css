@@ -12,3 +12,43 @@ app-root {
 .main-content {
   flex: 1;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* block horizontal scroll */
+}
+
+* {
+  box-sizing: border-box; /* prevent width overflow */
+}
+
+/* Force the main container to behave */
+.main-container {
+  display: flex;
+  flex-wrap: wrap;       /* wrap items to next line automatically */
+  align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  gap: 16px; /* spacing between columns */
+  padding: 10px;
+}
+
+/* Each “column” */
+.main-container > .column {
+  flex: 1 1 250px; /* min width 250px, will shrink and wrap */
+  max-width: 100%;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.calculator-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}

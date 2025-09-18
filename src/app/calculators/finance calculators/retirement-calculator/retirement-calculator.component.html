@@ -1,0 +1,28 @@
+<div class="container py-4">
+  <h2>Retirement Calculator</h2>
+  <form (ngSubmit)="calculate()" class="row g-3">
+    <div class="col-md-3">
+      <label class="form-label">Current Age</label>
+      <input type="number" class="form-control" [(ngModel)]="currentAge" name="currentAge" required />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Retirement Age</label>
+      <input type="number" class="form-control" [(ngModel)]="retirementAge" name="retirementAge" required />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Monthly Savings</label>
+      <input type="number" class="form-control" [(ngModel)]="monthlySavings" name="monthlySavings" required />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Expected Annual Return (%)</label>
+      <input type="number" class="form-control" [(ngModel)]="annualReturn" name="annualReturn" required />
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary">Calculate</button>
+    </div>
+  </form>
+
+  <div *ngIf="futureValue !== null" class="alert alert-info mt-3">
+    Estimated Retirement Corpus: ₹ {{ futureValue | number:'1.2-2' }}
+  </div>
+</div>

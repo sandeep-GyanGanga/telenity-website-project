@@ -1,0 +1,42 @@
+<div class="container py-4">
+  <h2>Amortization Schedule Calculator</h2>
+  <form (ngSubmit)="calculateSchedule()" class="row g-3">
+    <div class="col-md-3">
+      <label class="form-label">Loan Amount</label>
+      <input type="number" class="form-control" [(ngModel)]="loanAmount" name="loanAmount" required />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Interest Rate (%)</label>
+      <input type="number" class="form-control" [(ngModel)]="interestRate" name="interestRate" required />
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Term (Months)</label>
+      <input type="number" class="form-control" [(ngModel)]="termMonths" name="termMonths" required />
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary">Generate Schedule</button>
+    </div>
+  </form>
+
+  <div *ngIf="schedule.length > 0" class="mt-3">
+    <h5>Monthly EMI: ₹ {{ emi | number:'1.2-2' }}</h5>
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Principal Paid</th>
+          <th>Interest Paid</th>
+          <th>Remaining Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of schedule">
+          <td>{{ row.month }}</td>
+          <td>{{ row.principal | number:'1.2-2' }}</td>
+          <td>{{ row.interest | number:'1.2-2' }}</td>
+          <td>{{ row.balance | number:'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
