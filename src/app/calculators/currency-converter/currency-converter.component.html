@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <h3>Currency Converter</h3>
+  <div class="mb-3">
+    <label>Amount (USD):</label>
+    <input type="number" [(ngModel)]="amount" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Exchange Rate (USD → INR):</label>
+    <input type="number" [(ngModel)]="exchangeRate" class="form-control">
+  </div>
+  <button class="btn btn-primary" (click)="convert()">Convert</button>
+  
+  <div *ngIf="convertedAmount">
+    <p class="mt-3">Converted Amount: {{ convertedAmount | currency:'INR' }}</p>
+  </div>
+</div>

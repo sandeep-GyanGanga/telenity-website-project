@@ -1,0 +1,13 @@
+<div class="container mt-3">
+  <h3>Time Converter / World Clock</h3>
+  <div class="mb-3">
+    <label>Hours:</label>
+    <input type="number" [(ngModel)]="hours" class="form-control">
+    <button class="btn btn-primary mt-2" (click)="toMinutes()">Convert to Minutes</button>
+  </div>
+  <div class="mb-3">
+    <label>Minutes:</label>
+    <input type="number" [(ngModel)]="minutes" class="form-control">
+    <button class="btn btn-secondary mt-2" (click)="toHours()">Convert to Hours</button>
+  </div>
+</div>

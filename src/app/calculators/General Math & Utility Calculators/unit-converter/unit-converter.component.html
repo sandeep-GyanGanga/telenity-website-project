@@ -1,0 +1,13 @@
+<div class="container mt-3">
+  <h3>Unit Converter</h3>
+  <div class="mb-3">
+    <label>Meters:</label>
+    <input type="number" [(ngModel)]="meters" class="form-control">
+    <button class="btn btn-primary mt-2" (click)="convertToKm()">Convert to Km</button>
+  </div>
+  <div class="mb-3">
+    <label>Kilometers:</label>
+    <input type="number" [(ngModel)]="kilometers" class="form-control">
+    <button class="btn btn-secondary mt-2" (click)="convertToM()">Convert to M</button>
+  </div>
+</div>

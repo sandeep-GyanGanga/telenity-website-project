@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h2 class="mb-3">Fuel Cost Calculator</h2>
+
+  <div class="mb-3">
+    <label class="form-label">Distance (km):</label>
+    <input type="number" [(ngModel)]="distance" class="form-control" placeholder="Enter distance in kilometers">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Fuel Efficiency (km/l):</label>
+    <input type="number" [(ngModel)]="fuelEfficiency" class="form-control" placeholder="Enter vehicle mileage">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Fuel Price (per liter):</label>
+    <input type="number" [(ngModel)]="fuelPrice" class="form-control" placeholder="Enter fuel price">
+  </div>
+
+  <button class="btn btn-primary" (click)="calculateCost()">Calculate</button>
+
+  <div *ngIf="totalCost > 0" class="alert alert-info mt-3">
+    Total Fuel Cost: <strong>{{ totalCost | number:'1.2-2' }}</strong> currency units
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container mt-3">
+  <h3>Calorie Calculator</h3>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label>Age:</label>
+      <input type="number" [(ngModel)]="age" class="form-control">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Gender:</label>
+      <select [(ngModel)]="gender" class="form-control">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label>Weight (kg):</label>
+      <input type="number" [(ngModel)]="weight" class="form-control">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Height (cm):</label>
+      <input type="number" [(ngModel)]="height" class="form-control">
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Activity Level:</label>
+    <select [(ngModel)]="activityLevel" class="form-control">
+      <option [value]="1.2">Sedentary</option>
+      <option [value]="1.375">Lightly Active</option>
+      <option [value]="1.55">Moderately Active</option>
+      <option [value]="1.725">Very Active</option>
+      <option [value]="1.9">Extra Active</option>
+    </select>
+  </div>
+
+  <button class="btn btn-primary" (click)="calculate()">Calculate</button>
+
+  <div *ngIf="caloriesNeeded">
+    <p class="mt-3">BMR: {{ bmr | number:'1.0-0' }} kcal/day</p>
+    <p>Calories Needed: {{ caloriesNeeded | number:'1.0-0' }} kcal/day</p>
+  </div>
+</div>

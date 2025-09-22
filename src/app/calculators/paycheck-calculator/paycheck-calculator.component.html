@@ -1,0 +1,20 @@
+<div class="container mt-3">
+  <h3>Paycheck Calculator</h3>
+  <div class="mb-3">
+    <label>Gross Salary:</label>
+    <input type="number" [(ngModel)]="grossSalary" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Tax Rate (%):</label>
+    <input type="number" [(ngModel)]="taxRate" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Other Deductions:</label>
+    <input type="number" [(ngModel)]="deductions" class="form-control">
+  </div>
+  <button class="btn btn-primary" (click)="calculate()">Calculate</button>
+  
+  <div *ngIf="netSalary">
+    <p class="mt-3">Net Salary: {{ netSalary | currency:'INR' }}</p>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container mt-3">
+  <h3>Matrix / Math Calculator (2x2 Addition)</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <h5>Matrix A</h5>
+      <div *ngFor="let row of matrixA; let i=index">
+        <input type="number" [(ngModel)]="matrixA[i][0]" class="form-control d-inline w-25">
+        <input type="number" [(ngModel)]="matrixA[i][1]" class="form-control d-inline w-25">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h5>Matrix B</h5>
+      <div *ngFor="let row of matrixB; let i=index">
+        <input type="number" [(ngModel)]="matrixB[i][0]" class="form-control d-inline w-25">
+        <input type="number" [(ngModel)]="matrixB[i][1]" class="form-control d-inline w-25">
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary mt-3" (click)="calculate()">Add Matrices</button>
+
+  <div class="mt-3" *ngIf="result">
+    <h5>Result</h5>
+    <div *ngFor="let row of result">
+      <span *ngFor="let val of row" class="me-3">{{ val }}</span>
+    </div>
+  </div>
+</div>
